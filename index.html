@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wakanda Fitness Barracks - Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts - Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Stats -->
+      <div class="row mb-4">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Members</h5>
+              <h2 class="dashboard-stat">0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Active Members</h5>
+              <h2 class="dashboard-stat">0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Today's Attendance</h5>
+              <h2 class="dashboard-stat">0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Expiring Soon</h5>
+              <h2 class="dashboard-stat">0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RFID Scanner Section -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">RFID Scanner</h5>
+              <p class="card-text text-secondary">
+                Scan member's RFID tag to record attendance
+              </p>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rfidInput"
+                  placeholder="Enter RFID tag"
+                  autocomplete="off"
+                />
+                <button class="btn btn-primary" type="button" id="checkInBtn">
+                  <i class="fas fa-sign-in-alt me-2"></i>Check In
+                </button>
+              </div>
+              <div id="resultMessage" class="alert d-none mt-3"></div>
+              <div class="scanner-status alert alert-info">
+                Ready to scan...
+              </div>
+              <div class="last-scan mt-3" style="display: none">
+                <h6>Last Scan:</h6>
+                <div class="scan-details"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity</h5>
+              <div class="table-responsive">
+                <table class="table" id="recentActivityTable">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Member</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Navbar Script -->
+    <script src="assets/js/navbar.js"></script>
+    <!-- API Service -->
+    <script src="assets/js/api.js"></script>
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
